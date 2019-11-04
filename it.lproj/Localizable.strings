@@ -1,0 +1,24 @@
+/*
+  Localizable.strings
+  Luminoso
+
+  Created by Fabrizio Rodin-Miron on 2019-11-03.
+  Copyright © 2019 Skylow. All rights reserved.
+*/
+
+/** Error handling */
+
+"NoOrLowConnexionError" = "Please check your internet connection.";
+
+"LoginServerError" = "A server error was encountered. Please try again later.";
+
+"BadPassword" = "Invalid login credentials.";
+
+"ErrorMessageEmailDuplicate" = "Email already exists. If this is your email, please log in.";
+
+"ErrorMessagePhoneDuplicate" = "Phone number already exists. Please specify another one or log into your existing account.";
+
+"ErrorMessageGeneric" = "Something went wrong";
+
+
+

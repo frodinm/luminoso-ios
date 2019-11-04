@@ -1,0 +1,197 @@
+PODS:
+  - Alamofire (4.9.0)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - Bugsnag (5.22.9)
+  - FacebookCore (0.9.0):
+    - FBSDKCoreKit (~> 5.0)
+  - FacebookShare (0.9.0):
+    - FacebookCore (~> 0.9.0)
+    - FBSDKCoreKit (~> 5.0)
+    - FBSDKShareKit (~> 5.0)
+  - FBSDKCoreKit (5.6.0):
+    - FBSDKCoreKit/Basics (= 5.6.0)
+    - FBSDKCoreKit/Core (= 5.6.0)
+  - FBSDKCoreKit/Basics (5.6.0)
+  - FBSDKCoreKit/Core (5.6.0):
+    - FBSDKCoreKit/Basics
+  - FBSDKShareKit (5.6.0):
+    - FBSDKShareKit/Share (= 5.6.0)
+  - FBSDKShareKit/Share (5.6.0):
+    - FBSDKCoreKit (~> 5.0)
+  - Firebase/Analytics (6.11.0):
+    - Firebase/Core
+  - Firebase/Core (6.11.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.1.3)
+  - Firebase/CoreOnly (6.11.0):
+    - FirebaseCore (= 6.3.2)
+  - FirebaseAnalytics (6.1.3):
+    - FirebaseCore (~> 6.3)
+    - FirebaseInstanceID (~> 4.2)
+    - GoogleAppMeasurement (= 6.1.3)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3.901)
+  - FirebaseCore (6.3.2):
+    - FirebaseCoreDiagnostics (~> 1.0)
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+  - FirebaseCoreDiagnostics (1.1.1):
+    - FirebaseCoreDiagnosticsInterop (~> 1.0)
+    - GoogleDataTransportCCTSupport (~> 1.0)
+    - GoogleUtilities/Environment (~> 6.2)
+    - GoogleUtilities/Logger (~> 6.2)
+    - nanopb (~> 0.3.901)
+  - FirebaseCoreDiagnosticsInterop (1.0.0)
+  - FirebaseInstanceID (4.2.6):
+    - FirebaseCore (~> 6.0)
+    - GoogleUtilities/Environment (~> 6.0)
+    - GoogleUtilities/UserDefaults (~> 6.0)
+  - GoogleAppMeasurement (6.1.3):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (~> 0.3.901)
+  - GoogleDataTransport (3.0.1)
+  - GoogleDataTransportCCTSupport (1.2.1):
+    - GoogleDataTransport (~> 3.0)
+    - nanopb (~> 0.3.901)
+  - GoogleUtilities/AppDelegateSwizzler (6.3.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.3.1)
+  - GoogleUtilities/Logger (6.3.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.3.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.3.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.3.1)"
+  - GoogleUtilities/Reachability (6.3.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.3.1):
+    - GoogleUtilities/Logger
+  - nanopb (0.3.9011):
+    - nanopb/decode (= 0.3.9011)
+    - nanopb/encode (= 0.3.9011)
+  - nanopb/decode (0.3.9011)
+  - nanopb/encode (0.3.9011)
+  - ObjectMapper (3.5.1)
+  - RxAlamofire (5.1.0):
+    - RxAlamofire/Core (= 5.1.0)
+  - RxAlamofire/Core (5.1.0):
+    - Alamofire (~> 4.8)
+    - RxSwift (~> 5.0)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - Socket.IO-Client-Swift (15.2.0):
+    - Starscream (~> 3.1)
+  - Starscream (3.1.1)
+  - SwiftKeychainWrapper (3.4.0)
+  - SwiftyRSA (1.5.0):
+    - SwiftyRSA/ObjC (= 1.5.0)
+  - SwiftyRSA/ObjC (1.5.0)
+  - Swinject (2.7.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.9.0)
+  - AlamofireImage (~> 3.5.2)
+  - Bugsnag (~> 5.22.9)
+  - FacebookCore (~> 0.9.0)
+  - FacebookShare (~> 0.9.0)
+  - Firebase/Analytics (~> 6.11.0)
+  - ObjectMapper (~> 3.5.1)
+  - RxAlamofire (~> 5.1.0)
+  - RxBlocking
+  - RxCocoa (~> 5.0.1)
+  - RxSwift (~> 5.0.1)
+  - RxTest
+  - Socket.IO-Client-Swift (~> 15.2.0)
+  - SwiftKeychainWrapper (~> 3.4.0)
+  - SwiftyRSA (~> 1.5.0)
+  - Swinject (~> 2.7.1)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireImage
+    - Bugsnag
+    - FacebookCore
+    - FacebookShare
+    - FBSDKCoreKit
+    - FBSDKShareKit
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseInstanceID
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
+    - nanopb
+    - ObjectMapper
+    - RxAlamofire
+    - RxBlocking
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - RxTest
+    - Socket.IO-Client-Swift
+    - Starscream
+    - SwiftKeychainWrapper
+    - SwiftyRSA
+    - Swinject
+
+SPEC CHECKSUMS:
+  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  Bugsnag: d11978309d9c7de3732d8234a640fb855b6fc73c
+  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
+  FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
+  FBSDKCoreKit: d6655a343868d4bb5c29a60859bab07c3be14a0b
+  FBSDKShareKit: 0d8c4cfd5c1f185d5f9c26d79758b141086e1251
+  Firebase: bc9cfc7a96c73268656d5aaab453ff1b4b530e0e
+  FirebaseAnalytics: 0e3ecff2c5d86070f7d4325e21f1edabfbd558dc
+  FirebaseCore: beeff42c07c30ea94702471d99db2089b594fbbd
+  FirebaseCoreDiagnostics: af29e43048607588c050889d19204f4d7b758c9f
+  FirebaseCoreDiagnosticsInterop: 6829da2b8d1fc795ff1bd99df751d3788035d2cb
+  FirebaseInstanceID: d0eafcd8bdbd3447cd694594734078c3e3e77d8b
+  GoogleAppMeasurement: 434cc7be25e71dc04b8d0e3079125127b330e84a
+  GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
+  GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
+  GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
+  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  RxAlamofire: a2d7621de4c23a0c6e7b476b504acc32838ee341
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+
+PODFILE CHECKSUM: 56f013068df9fd8140dba8d5952e8696d71fbfa9
+
+COCOAPODS: 1.8.4
