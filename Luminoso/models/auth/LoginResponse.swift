@@ -1,20 +1,20 @@
 //
 // Created by Fabrizio Rodin-Miron on 2019-11-03.
-// Copyright (c) 2019 Skylow. All rights reserved.
+// Copyright (c) 2019 Fabrizio Rodin-Miron. All rights reserved.
 //
 
 import ObjectMapper
 
-class LoginResponse: Mappable {
+struct LoginResponse: Mappable {
     var accessToken: String!
     var tokenType: String!
     var refreshToken: String!
     var expiresIn: Int!
     var scope: String!
 
-    required init?(map: Map) {}
+    init?(map: Map) {}
 
-    func mapping(map: Map) {
+    mutating func mapping(map: Map) {
         accessToken <- map["access_token"]
         tokenType <- map["token_type"]
         refreshToken <- map["refresh_token"]

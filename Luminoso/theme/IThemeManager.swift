@@ -1,11 +1,12 @@
 //
 // Created by Fabrizio Rodin-Miron on 2019-09-15.
-// Copyright (c) 2019 Skylow. All rights reserved.
+// Copyright (c) 2019 Fabrizio Rodin-Miron. All rights reserved.
 //
 
-import Foundation
+
+import RxSwift
 
 protocol IThemeManager {
-    func currentTheme() -> Theme
+    var currentTheme: BehaviorSubject<Theme> { get }
     func applyTheme(theme: Theme)
 }

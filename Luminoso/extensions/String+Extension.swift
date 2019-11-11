@@ -1,6 +1,6 @@
 //
 // Created by Fabrizio Rodin-Miron on 2019-11-03.
-// Copyright (c) 2019 Skylow. All rights reserved.
+// Copyright (c) 2019 Fabrizio Rodin-Miron. All rights reserved.
 //
 
 import Foundation
@@ -15,6 +15,6 @@ extension String {
     }
 
     func toBase64() -> String {
-        return Data(self.utf8).base64EncodedString()
+        Data(self.utf8).base64EncodedString()
     }
 }

@@ -1,77 +1,61 @@
 //
 // Created by Fabrizio Rodin-Miron on 2019-09-15.
-// Copyright (c) 2019 Skylow. All rights reserved.
+// Copyright (c) 2019 Fabrizio Rodin-Miron. All rights reserved.
 //
 
 import UIKit
-import Foundation
+import RxSwift
+import RxTheme
+import SwifterSwift
 
+let globalStatusBarStyle = BehaviorSubject<UIStatusBarStyle>(value: .default)
+let themeService = ThemeType.service(initial: ThemeType.currentTheme())
 
-private enum ThemeKey: String {
-    case selected
+func themed<T>(_ mapper: @escaping ((Theme) -> T)) -> Observable<T> {
+    return themeService.attrStream(mapper)
+}
 
-    var value : String {
+enum ThemeType: ThemeProvider {
+    case light
+    case dark
+
+    var associatedObject: Theme {
         switch self {
-        case .selected: return "SelectedTheme"
-        }
-    }
-}
-
-
-class ThemeManager: IThemeManager {
-
-    func currentTheme() -> Theme {
-        if let storedTheme = (UserDefaults.standard.value(forKey: ThemeKey.selected.value) as AnyObject).integerValue {
-            return Theme(rawValue: storedTheme)!
-        } else {
-            return .dark
+        case .light: return LightTheme()
+        case .dark: return DarkTheme()
         }
     }
 
-    func applyTheme(theme: Theme) {
-        // First persist the selected theme using NSUserDefaults.
-        UserDefaults.standard.setValue(theme.rawValue, forKey: ThemeKey.selected.value)
-        UserDefaults.standard.synchronize()
+    var isDark: Bool {
+        switch self {
+        case .dark: return true
+        default: return false
+        }
+    }
 
-        // You get your current (selected) theme and apply the main color to the tintColor property of your application’s window.
-        let sharedApplication = UIApplication.shared
-        sharedApplication.delegate?.window??.tintColor = theme.mainColor
-
-        UINavigationBar.appearance().barStyle = theme.barStyle
-        UINavigationBar.appearance().setBackgroundImage(theme.navigationBackgroundImage, for: .default)
-        UINavigationBar.appearance().backIndicatorImage = UIImage(named: "backArrow")
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage(named: "backArrowMaskFixed")
-
-        UITabBar.appearance().barStyle = theme.barStyle
-        UITabBar.appearance().backgroundImage = theme.tabBarBackgroundImage
-
-        let tabIndicator = UIImage(named: "tabBarSelectionIndicator")?.withRenderingMode(.alwaysTemplate)
-        let tabResizableIndicator = tabIndicator?.resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 2.0, bottom: 0, right: 2.0))
-        UITabBar.appearance().selectionIndicatorImage = tabResizableIndicator
-
-        let controlBackground = UIImage(named: "controlBackground")?.withRenderingMode(.alwaysTemplate)
-                .resizableImage(withCapInsets: UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3))
-        let controlSelectedBackground = UIImage(named: "controlSelectedBackground")?
-                .withRenderingMode(.alwaysTemplate)
-                .resizableImage(withCapInsets: UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3))
-
-        UISegmentedControl.appearance().setBackgroundImage(controlBackground, for: .normal, barMetrics: .default)
-        UISegmentedControl.appearance().setBackgroundImage(controlSelectedBackground, for: .selected, barMetrics: .default)
-
-        UIStepper.appearance().setBackgroundImage(controlBackground, for: .normal)
-        UIStepper.appearance().setBackgroundImage(controlBackground, for: .disabled)
-        UIStepper.appearance().setBackgroundImage(controlBackground, for: .highlighted)
-        UIStepper.appearance().setDecrementImage(UIImage(named: "fewerPaws"), for: .normal)
-        UIStepper.appearance().setIncrementImage(UIImage(named: "morePaws"), for: .normal)
-
-        UISlider.appearance().setThumbImage(UIImage(named: "sliderThumb"), for: .normal)
-        UISlider.appearance().setMaximumTrackImage(UIImage(named: "maximumTrack")?
-                .resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 0.0, bottom: 0, right: 6.0)), for: .normal)
-        UISlider.appearance().setMinimumTrackImage(UIImage(named: "minimumTrack")?
-                .withRenderingMode(.alwaysTemplate)
-                .resizableImage(withCapInsets: UIEdgeInsets(top: 0, left: 6.0, bottom: 0, right: 0)), for: .normal)
-
-        UISwitch.appearance().onTintColor = theme.mainColor.withAlphaComponent(0.3)
-        UISwitch.appearance().thumbTintColor = theme.mainColor
+    func toggled() -> ThemeType {
+        var theme: ThemeType
+        switch self {
+        case .light: theme = ThemeType.dark
+        case .dark: theme = ThemeType.light
+        }
+        theme.save()
+        return theme
     }
 }
+
+extension ThemeType {
+    static func currentTheme() -> ThemeType {
+        let defaults = UserDefaults.standard
+        let isDark = defaults.bool(forKey: "IsDarkKey")
+        let theme = isDark ? ThemeType.dark : ThemeType.light
+        theme.save()
+        return theme
+    }
+
+    func save() {
+        let defaults = UserDefaults.standard
+        defaults.set(self.isDark, forKey: "IsDarkKey")
+    }
+}
+

@@ -1,11 +1,11 @@
 //
 // Created by Fabrizio Rodin-Miron on 2019-11-04.
-// Copyright (c) 2019 Skylow. All rights reserved.
+// Copyright (c) 2019 Fabrizio Rodin-Miron. All rights reserved.
 //
 
 import ObjectMapper
 
-class ApiResponse<T>: Mappable {
+struct ApiResponse<T>: Mappable {
     var success: Bool!
     var data: T!
     var message: String!
@@ -16,9 +16,9 @@ class ApiResponse<T>: Mappable {
         self.message = message
     }
 
-    required init?(map: Map) {}
+    init?(map: Map) {}
 
-    func mapping(map: Map) {
+    mutating func mapping(map: Map) {
         success <- map["success"]
         data <- map["data"]
         message <- map["message"]

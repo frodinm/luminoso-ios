@@ -1,6 +1,6 @@
 //
 // Created by Fabrizio Rodin-Miron on 2019-09-15.
-// Copyright (c) 2019 Skylow. All rights reserved.
+// Copyright (c) 2019 Fabrizio Rodin-Miron. All rights reserved.
 //
 
 import Foundation
@@ -27,7 +27,8 @@ public final class ApiClient: IApiClient {
         return RxAlamofire.requestJSON(.post, baseUrl + "/luminoso-security/oauth/token", parameters: parameters, headers: headers)
                 .debug()
                 .mapObject(type: LoginResponse.self)
-                .observeOn(MainScheduler.asyncInstance)
+                .subscribeOn(MainScheduler.asyncInstance)
+                .do(onError: handleError)
     }
 
     func postSpace() -> Observable<EmptyResponseData> {
@@ -37,5 +38,9 @@ public final class ApiClient: IApiClient {
        return RxAlamofire.requestJSON(.post, baseUrl + "/luminoso-real-estate/spaces/post", parameters: parameters, headers: headers)
                 .debug()
                 .mapApiResponseObject(type: EmptyResponseData.self)
+    }
+
+    private func handleError(error: Error){
+        print(error.localizedDescription)
     }
 }

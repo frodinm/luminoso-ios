@@ -31,3 +31,19 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+.build/
+
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# R.swift
+*.generated.swift
