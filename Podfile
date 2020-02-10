@@ -2,7 +2,7 @@ platform :ios, '11.0'
 
 def shared_pods
   # Networking
-  pod 'Alamofire', '~> 4.9.0' # https://github.com/Alamofire/Alamofire
+  pod 'Alamofire', '~> 4.9.1' # https://github.com/Alamofire/Alamofire
   pod 'ObjectMapper', '~> 3.5.1' # https://github.com/tristanhimmelman/ObjectMapper
 
   # Image
@@ -10,17 +10,20 @@ def shared_pods
 
   # Analytics
   pod 'Umbrella' # https://github.com/devxoul/Umbrella
-  pod 'Firebase/Analytics', '~> 6.11.0'
-  pod 'Bugsnag', '~> 5.22.9' # https://github.com/bugsnag/bugsnag-cocoa
+  pod 'Firebase/Analytics', '~> 6.16.0'
+  pod 'Bugsnag', '~> 5.23.0' # https://github.com/bugsnag/bugsnag-cocoa
   pod 'FacebookCore', '~> 0.9.0'
   pod 'FacebookShare', '~> 0.9.0'
+
+  #SSO
+  pod 'GoogleSignIn'
 
   # Sockets
   pod 'Socket.IO-Client-Swift', '~> 15.2.0' # https://github.com/socketio/socket.io-client-swift
 
   # Dependency injection
   pod 'Swinject', '~> 2.7.1' # https://github.com/Swinject/Swinject
-  pod 'SwinjectAutoregistration', '2.6.1'
+  pod 'SwinjectAutoregistration', '2.7.0'
 
   # Code quality
   pod 'SwifterSwift/Foundation' # https://github.com/SwifterSwift/SwifterSwift
@@ -30,9 +33,10 @@ def shared_pods
   pod 'ImageSlideshow', '~> 1.8.1' # https://github.com/zvonicek/ImageSlideshow
   pod 'WhatsNewKit' , '~> 1.3.1' # https://github.com/SvenTiigi/WhatsNewKit
   pod 'MessageKit', '~> 3.0.0' # https://github.com/MessageKit/MessageKit
-  pod 'Localize-Swift', '~> 3.0.0' # https://github.com/marmelroy/Localize-Swift
-  pod 'Hero', '~> 1.4.0'  # https://github.com/lkzhao/Hero
+  pod 'Localize-Swift', '~> 3.1.0' # https://github.com/marmelroy/Localize-Swift
+  pod 'Hero', '~> 1.5.0'  # https://github.com/lkzhao/Hero
   pod 'NVActivityIndicatorView', '~> 4.8.0' # https://github.com/ninjaprox/NVActivityIndicatorView
+  pod 'Toast-Swift', '~> 5.0.0' # https://github.com/scalessec/Toast-Swift
 
   # Date
   pod 'SwiftDate', '~> 6.1.0' # https://github.com/malcommac/SwiftDate
@@ -58,7 +62,7 @@ target 'Luminoso' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Zuccini
+  # Pods
   shared_pods
 
   target 'LuminosoTests' do
