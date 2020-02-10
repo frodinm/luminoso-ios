@@ -15,7 +15,6 @@ protocol Navigatable {
 
 
 class Navigator {
-    static var `default` = Navigator()
 
     // MARK: - segues list, all app scenes
     enum Scene {
@@ -38,10 +37,6 @@ class Navigator {
     // MARK: - get a single VC
     func get(segue: Scene) -> UIViewController? {
         switch segue {
-//        case .tabs:
-//            let rootVC = HomeTabBarController(viewModel: viewModel, navigator: self)
-
-
         case .safari(let url):
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
             return nil
@@ -72,11 +67,15 @@ class Navigator {
     // MARK: - invoke a single segue
     func show(segue: Scene, sender: UIViewController?, transition: Transition = .navigation(type: .cover(direction: .left))) {
         if let target = get(segue: segue) {
-            show(target: target, sender: sender, transition: transition)
+            navigate(target: target, sender: sender, transition: transition)
         }
     }
 
-    private func show(target: UIViewController, sender: UIViewController?, transition: Transition) {
+    func show(target: UIViewController, sender: UIViewController?, transition: Transition = .navigation(type: .cover(direction: .left))) {
+        navigate(target: target, sender: sender, transition: transition)
+    }
+
+    private func navigate(target: UIViewController, sender: UIViewController?, transition: Transition) {
         switch transition {
         case .root:
 //            UIView.transition(with: window, duration: 0.5, options: .transitionFlipFromLeft, animations: {

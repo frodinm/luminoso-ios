@@ -6,5 +6,6 @@
 import RxSwift
 
 protocol IAuthenticationRemote {
-    func login(loginBody: LoginBody) -> Observable<LoginResponse>
+    func manual(loginBody: LoginBody) -> Observable<LoginResponse>
+    func google(loginBody: LoginBody) -> Observable<LoginResponse>
 }

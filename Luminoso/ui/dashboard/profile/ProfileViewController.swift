@@ -32,12 +32,8 @@ class ProfileViewController: ViewController {
     }
 
     @objc func onSwitchChange(sender:UISwitch) {
-        let isOn = sender.isOn
-        if(isOn){
-            themeService.switch(.dark)
-        } else {
-            themeService.switch(.light)
-        }
+        themeService.type.toggled()
+
         print(sender.isOn)
     }
 }

@@ -26,15 +26,15 @@ protocol Theme {
 
 struct LightTheme: Theme {
     let primary = UIColor.Material.white
-    let secondary = UIColor.Material.red
-    let onPrimaryText = UIColor.Material.white
-    let onSecondaryText = UIColor.Material.white
+    let secondary = UIColor.Material.orange
+    let onPrimaryText = UIColor.Material.black
+    let onSecondaryText = UIColor.Material.red
     let background = UIColor.Material.white
-    let onBackground = UIColor.Material.black
+    let onBackground = UIColor.Material.white
     let surface = UIColor.Material.white
-    let onSurface = UIColor.Material.red700
+    let onSurface = UIColor.Material.orange500
     let error = UIColor.Material.red
-    let separator = UIColor.Material.black
+    let separator = UIColor.Material.white
     let statusBarStyle = UIStatusBarStyle.default
     let barStyle = UIBarStyle.default
     let keyboardAppearance = UIKeyboardAppearance.light
@@ -46,8 +46,8 @@ struct DarkTheme: Theme {
     let secondary = UIColor.Material.red
     let onPrimaryText = UIColor.Material.white
     let onSecondaryText = UIColor.Material.white
-    let background = UIColor.Material.grey800
-    let onBackground = UIColor.Material.white
+    let background = UIColor.Material.grey900
+    let onBackground = UIColor.Material.black
     let surface = UIColor.Material.black
     let onSurface = UIColor.Material.white
     let error = UIColor.Material.red

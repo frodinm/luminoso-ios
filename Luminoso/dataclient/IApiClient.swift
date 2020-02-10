@@ -7,5 +7,6 @@ import RxSwift
 
 protocol IApiClient {
     func login(loginBody: LoginBody) -> Observable<LoginResponse>
-    func postSpace() -> Observable<EmptyResponseData>
+    func register(registerBody: RegisterBody) -> Observable<RegisterResponse>
+    func verify(token: String) -> Observable<(HTTPURLResponse, Any)>
 }

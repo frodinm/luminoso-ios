@@ -7,18 +7,18 @@ import ObjectMapper
 
 struct LoginResponse: Mappable {
     var accessToken: String!
-    var tokenType: String!
-    var refreshToken: String!
     var expiresIn: Int!
+    var refreshToken: String!
+    var tokenType: String!
     var scope: String!
 
     init?(map: Map) {}
 
     mutating func mapping(map: Map) {
         accessToken <- map["access_token"]
-        tokenType <- map["token_type"]
-        refreshToken <- map["refresh_token"]
         expiresIn <- map["expires_in"]
+        refreshToken <- map["refresh_token"]
+        tokenType <- map["token_type"]
         scope <- map["scope"]
     }
 }

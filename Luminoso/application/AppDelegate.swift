@@ -1,6 +1,5 @@
 //
 //  AppDelegate.swift
-//  Zuccini
 //
 //  Created by Fabrizio Rodin-Miron on 2019-07-23.
 //  Copyright © 2019 Fabrizio Rodin-Miron. All rights reserved.
@@ -9,13 +8,13 @@
 import UIKit
 import Swinject
 import SwinjectAutoregistration
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     let container = Container() { container in
-
         // Navigation
         container.register(Navigator.self) { _ in Navigator() }.inObjectScope(.container)
 
@@ -40,26 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(ProfileViewModel.self) { r in ProfileViewModel() }
 
         // View Controllers
-        container.register(ExploreViewController.self) { r in ExploreViewController(
-                viewModel: r.resolve(ExploreViewModel.self)!,
-                navigator: r.resolve(Navigator.self)!
-            )
-        }
-        container.register(SavedViewController.self) { r in SavedViewController(
-                viewModel: r.resolve(SavedViewModel.self)!,
-                navigator: r.resolve(Navigator.self)!
-             )
-        }
-        container.register(AlertsViewController.self) { r in AlertsViewController(
-                viewModel: r.resolve(AlertsViewModel.self)!,
-                navigator: r.resolve(Navigator.self)!
-            )
-        }
-        container.register(ProfileViewController.self) { r in ProfileViewController(
-                viewModel: r.resolve(ProfileViewModel.self)!,
-                navigator: r.resolve(Navigator.self)!
-            )
-        }
+        container.autoregister(ExploreViewController.self, initializer: ExploreViewController.init)
+        container.autoregister(SavedViewController.self, initializer: SavedViewController.init)
+        container.autoregister(AlertsViewController.self, initializer: AlertsViewController.init)
+        container.autoregister(ProfileViewController.self, initializer: ProfileViewController.init)
+        container.autoregister(LoginViewController.self, initializer: LoginViewController.init)
 
         // Tab navigation controller
         container.autoregister(HomeTabBarController.self, initializer: HomeTabBarController.init)
@@ -69,6 +53,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        GIDSignIn.sharedInstance().clientID = "777117467633-eoh27012ll1lr3jrt5gb7gdsim826n1p.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
 
         window = UIWindow()
         window?.makeKeyAndVisible()
@@ -100,6 +87,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    @available(iOS 9.0, *)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+        GIDSignIn.sharedInstance().handle(url)
+    }
+
+
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+                print("The user has not signed in before or they have since signed out.")
+            } else {
+                print("\(error.localizedDescription)")
+            }
+            return
+        }
+        // Perform any operations on signed in user here.
+        let userId = user.userID                  // For client-side use only!
+        let idToken = user.authentication.idToken // Safe to send to the server
+        let fullName = user.profile.name
+        let givenName = user.profile.givenName
+        let familyName = user.profile.familyName
+        let email = user.profile.email
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
+    }
 
 }
 

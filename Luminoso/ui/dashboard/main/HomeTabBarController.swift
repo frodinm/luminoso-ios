@@ -68,7 +68,7 @@ class HomeTabBarController: UITabBarController {
     private func controllerWithTabBarItem(tabBarItem: HomeTabBarItem, rootController: UIViewController) -> UIViewController {
         let controller = NavigationController(rootViewController: rootController)
         controller.tabBarItem = UITabBarItem(title: tabBarItem.title, image: tabBarItem.image, selectedImage: tabBarItem.image)
-        controller.setNavigationBarHidden(true, animated: false)
+        controller.setNavigationBarHidden(false, animated: false)
         return controller
     }
 

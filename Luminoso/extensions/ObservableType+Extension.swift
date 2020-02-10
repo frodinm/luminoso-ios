@@ -10,21 +10,6 @@ import ObjectMapper
 
 extension ObservableType {
 
-    public func mapApiResponseObject<T: Mappable>(type: T.Type) -> Observable<T> {
-        return flatMap { data -> Observable<T> in
-            let (_, json) = (data as? (HTTPURLResponse, Any))!
-            guard let object = Mapper<ApiResponse<T>>().map(JSONObject: json) else {
-                throw NSError(
-                        domain: "",
-                        code: -1,
-                        userInfo: [NSLocalizedDescriptionKey: "ObjectMapper can't mapping"]
-                )
-            }
-
-            return Observable.just(object.data)
-        }
-    }
-
     public func mapObject<T: Mappable>(type: T.Type) -> Observable<T> {
         return flatMap { data -> Observable<T> in
             let (_, json) = (data as? (HTTPURLResponse, Any))!

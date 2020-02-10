@@ -14,7 +14,11 @@ class AuthenticationRemote: IAuthenticationRemote {
         api = apiClient
     }
 
-    func login(loginBody: LoginBody) -> Observable<LoginResponse> {
+    func manual(loginBody: LoginBody) -> Observable<LoginResponse> {
+        api.login(loginBody: loginBody)
+    }
+
+    func google(loginBody: LoginBody) -> Observable<LoginResponse> {
         api.login(loginBody: loginBody)
     }
 

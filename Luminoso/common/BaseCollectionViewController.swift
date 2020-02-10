@@ -7,19 +7,21 @@ import UIKit
 import RxSwift
 import NVActivityIndicatorView
 
-class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable {
+class BaseCollectionViewController: UICollectionViewController, Navigatable, NVActivityIndicatorViewable {
     var viewModel: ViewModel?
     var navigator: Navigator
 
     init(viewModel: ViewModel?, navigator: Navigator) {
         self.viewModel = viewModel
         self.navigator = navigator
-        super.init(nibName: nil, bundle: nil)
+        super.init(collectionViewLayout:.init())
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) is not supported")
     }
+
+    let isLoading = BehaviorSubject(value: false)
 
     var navigationTitle = "" {
         didSet {
@@ -43,10 +45,6 @@ class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable
         return view
     }()
 
-
-    let languageChanged = BehaviorSubject<Void>(value: ())
-    let motionShakeEvent = PublishSubject<Void>()
-
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,14 +56,10 @@ class ViewController: UIViewController, Navigatable, NVActivityIndicatorViewable
         hero.isEnabled = true
         navigationItem.backBarButtonItem = backBarButton
 
-        motionShakeEvent.subscribe(onNext: { () in
-            let theme = themeService.type.toggled()
-            themeService.switch(theme)
-        }).disposed(by: rx.disposeBag)
-
         themeService.rx
-                .bind({ $0.primary }, to: view.rx.backgroundColor)
                 .bind({ $0.secondary }, to: [backBarButton.rx.tintColor, closeBarButton.rx.tintColor])
+                .bind({ $0.background }, to: view.rx.backgroundColor )
+                .bind({ $0.background }, to: collectionView.rx.backgroundColor )
                 .disposed(by: rx.disposeBag)
     }
 

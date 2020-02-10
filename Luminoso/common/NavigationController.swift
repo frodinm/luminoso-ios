@@ -28,14 +28,12 @@ class NavigationController: UINavigationController {
         hero.modalAnimationType = .autoReverse(presenting: .fade)
         hero.navigationAnimationType = .autoReverse(presenting: .slide(direction: .left))
 
-        navigationBar.isTranslucent = false
         navigationBar.backIndicatorImage = R.image.navigationBack()
         navigationBar.backIndicatorTransitionMaskImage = R.image.navigationBack()
-        
 
         themeService.rx
             .bind({ $0.secondary }, to: navigationBar.rx.tintColor)
-            .bind({ $0.onSurface }, to: navigationBar.rx.barTintColor)
+            .bind({ $0.onBackground }, to: navigationBar.rx.barTintColor)
             .bind({ [NSAttributedString.Key.foregroundColor: $0.onPrimaryText] }, to: navigationBar.rx.titleTextAttributes)
             .disposed(by: rx.disposeBag)
     }

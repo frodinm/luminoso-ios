@@ -25,7 +25,6 @@
 		804764643B8CC6F18A953529 /* Pods_LuminosoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5FC6705100A697E6842ACA8 /* Pods_LuminosoUITests.framework */; };
 		DC8F50516C4EEF2C00AC965C /* ILoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F560EABD18F1F40855769 /* ILoginUseCase.swift */; };
 		DC8F5107A286FF94386C2F6C /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F58F446D3A277FE786957 /* UIColor+Extensions.swift */; };
-		DC8F51A4B43C9F5385184D8C /* PriceRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F586366B81C936F4240E9 /* PriceRange.swift */; };
 		DC8F52026E1F4EF4DFAFD3EA /* RegisterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F58372B4F7E19212962E6 /* RegisterResponse.swift */; };
 		DC8F5234F4946FB1F767662A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F53F959A6924520456669 /* UIView+Extensions.swift */; };
 		DC8F52CD7EC04D5374A7B836 /* IThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5CC101E178843F3584BF /* IThemeManager.swift */; };
@@ -49,7 +48,6 @@
 		DC8F5716CA4C2B8004AAE120 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5F5E422C7065A9EF2334 /* LoginViewModel.swift */; };
 		DC8F572E2B76D9151D010B78 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5AD91F27868FF7CDBA45 /* ExploreViewController.swift */; };
 		DC8F5810A346F64554ECC8DA /* DefaultTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F53B32D2779FB5ABA8364 /* DefaultTableViewCellViewModel.swift */; };
-		DC8F585D6646D07F1FFE4B25 /* BedsRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F501E6A81176E7BEC752D /* BedsRange.swift */; };
 		DC8F5886ED5198A311C741B7 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F54E939A5C1A64579A954 /* TableView.swift */; };
 		DC8F588CABDAD70EFBF5C03A /* BarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F586903BD992F8D928551 /* BarButtonItem.swift */; };
 		DC8F5916CFC2B6103B058E8B /* IAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F535830C127CC682101EC /* IAuthenticationRepository.swift */; };
@@ -66,7 +64,6 @@
 		DC8F5B50EA520BE139544038 /* GlobalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F574E9A4844713D19326C /* GlobalError.swift */; };
 		DC8F5B5263FB4FA32BB4B968 /* EmptyResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F528B353A252F8D2EC63C /* EmptyResponseData.swift */; };
 		DC8F5B5BBA8B3101461F76E4 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F59DB97CD96E176B901F7 /* NavigationController.swift */; };
-		DC8F5B7396680800D5071513 /* Dwelling.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F54A9EDE9E14672933C4A /* Dwelling.swift */; };
 		DC8F5B9362455D5FAC7539B7 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F59B30332D50319589E1A /* ExploreViewModel.swift */; };
 		DC8F5B9F6C6E9B4675497FEC /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5CE0EE4C02163D79EFF3 /* View.swift */; };
 		DC8F5C4E1CB905A05A437C4F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F542566984D6EA46C57BE /* ProfileViewModel.swift */; };
@@ -75,7 +72,6 @@
 		DC8F5C8E8418FF683B526D23 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5B75346508B71EA02CAA /* LoginResponse.swift */; };
 		DC8F5C92D61CEBFE683276B6 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F57D6D073B7568FFF17E6 /* ProfileViewController.swift */; };
 		DC8F5CDA320A8CC0A2874143 /* LoginBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5E03C0CD238EBEECBC9C /* LoginBody.swift */; };
-		DC8F5CEBBABD778C7B632863 /* BathRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F556907ED4F6D5104E632 /* BathRange.swift */; };
 		DC8F5CEEB9B258C49AB6D2A6 /* AuthenticationRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F5B3C5659C6D38E0CD8D9 /* AuthenticationRemote.swift */; };
 		DC8F5D719CF56D4D4B1E91A1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F527EDD04F272D0C54173 /* TableViewCell.swift */; };
 		DC8F5E9E88CF0C4F09BD7763 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8F50B1E0922BE3DC769DB7 /* ApiClient.swift */; };
@@ -141,7 +137,6 @@
 		BA07513EF16A8D43139C96DE /* Pods_LuminosoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LuminosoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4408F9090164597B79C322B /* Pods-LuminosoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuminosoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LuminosoTests/Pods-LuminosoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D94600AE2CB9DD40D5B5AA91 /* Pods-ZucciniUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZucciniUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZucciniUITests/Pods-ZucciniUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		DC8F501E6A81176E7BEC752D /* BedsRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BedsRange.swift; sourceTree = "<group>"; };
 		DC8F50A1BCA9A14045559663 /* HomeTabBarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewModel.swift; sourceTree = "<group>"; };
 		DC8F50B1E0922BE3DC769DB7 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		DC8F512182F17EAACC994DF9 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -158,11 +153,9 @@
 		DC8F53F4E46A473CE81F88EA /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		DC8F53F959A6924520456669 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		DC8F542566984D6EA46C57BE /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		DC8F54A9EDE9E14672933C4A /* Dwelling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dwelling.swift; sourceTree = "<group>"; };
 		DC8F54AEB658CD27E2CA339E /* AlertsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertsViewController.swift; sourceTree = "<group>"; };
 		DC8F54E939A5C1A64579A954 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		DC8F5508E90AB6EF1B27F9BE /* IAuthenticationRemote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAuthenticationRemote.swift; sourceTree = "<group>"; };
-		DC8F556907ED4F6D5104E632 /* BathRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BathRange.swift; sourceTree = "<group>"; };
 		DC8F55A8BCCF2558D53106A5 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		DC8F560EABD18F1F40855769 /* ILoginUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ILoginUseCase.swift; sourceTree = "<group>"; };
 		DC8F56DFAA91BDF4BFFA6E6B /* LoginUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -173,7 +166,6 @@
 		DC8F5816449EEF0D064ADB9A /* RegisterBody.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterBody.swift; sourceTree = "<group>"; };
 		DC8F58372B4F7E19212962E6 /* RegisterResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterResponse.swift; sourceTree = "<group>"; };
 		DC8F585D4B9ED685FDF8BBD6 /* ObservableType+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ObservableType+Extension.swift"; sourceTree = "<group>"; };
-		DC8F586366B81C936F4240E9 /* PriceRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceRange.swift; sourceTree = "<group>"; };
 		DC8F586903BD992F8D928551 /* BarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarButtonItem.swift; sourceTree = "<group>"; };
 		DC8F58F446D3A277FE786957 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		DC8F597BF6E3D877D37D44FF /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
@@ -420,7 +412,6 @@
 			children = (
 				DC8F5011E96A0BDB026B5BED /* auth */,
 				DC8F5AB10F32DFF19F324D7A /* analytics */,
-				DC8F593B0FA2769399309CD8 /* dwelling */,
 				DC8F5D076B35CBDF3CC8CDAE /* networking */,
 			);
 			path = models;
@@ -522,17 +513,6 @@
 				DC8F561D22F84AF3CFAACE00 /* auth */,
 			);
 			path = usecases;
-			sourceTree = "<group>";
-		};
-		DC8F593B0FA2769399309CD8 /* dwelling */ = {
-			isa = PBXGroup;
-			children = (
-				DC8F54A9EDE9E14672933C4A /* Dwelling.swift */,
-				DC8F586366B81C936F4240E9 /* PriceRange.swift */,
-				DC8F501E6A81176E7BEC752D /* BedsRange.swift */,
-				DC8F556907ED4F6D5104E632 /* BathRange.swift */,
-			);
-			path = dwelling;
 			sourceTree = "<group>";
 		};
 		DC8F599FAAED3DE9D0BC530C /* extensions */ = {
@@ -1024,7 +1004,6 @@
 				DC8F56242E5070209E63AE66 /* AlertsViewModel.swift in Sources */,
 				DC8F5C4E1CB905A05A437C4F /* ProfileViewModel.swift in Sources */,
 				DC8F54889E502B837B8D2A2E /* SavedViewModel.swift in Sources */,
-				DC8F5B7396680800D5071513 /* Dwelling.swift in Sources */,
 				DC8F52DA726436BF09F90BF3 /* ThemeEvents.swift in Sources */,
 				DC8F559015DD9D84CD5090D9 /* RxTheme+Extensions.swift in Sources */,
 				DC8F5107A286FF94386C2F6C /* UIColor+Extensions.swift in Sources */,
@@ -1045,9 +1024,6 @@
 				DC8F5C5DC97EB6FABE3ADD45 /* ErrorModel.swift in Sources */,
 				DC8F5D719CF56D4D4B1E91A1 /* TableViewCell.swift in Sources */,
 				DC8F5810A346F64554ECC8DA /* DefaultTableViewCellViewModel.swift in Sources */,
-				DC8F51A4B43C9F5385184D8C /* PriceRange.swift in Sources */,
-				DC8F585D6646D07F1FFE4B25 /* BedsRange.swift in Sources */,
-				DC8F5CEBBABD778C7B632863 /* BathRange.swift in Sources */,
 				DC8F52026E1F4EF4DFAFD3EA /* RegisterResponse.swift in Sources */,
 				DC8F5374A3AB5EA3C4165CFD /* RegisterBody.swift in Sources */,
 				DC8F5F06B16BFE592EDF375B /* LoginViewController.swift in Sources */,

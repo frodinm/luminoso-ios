@@ -11,6 +11,9 @@
 "alerts" = "Notificazione";
 "profile" = "Profilo";
 
+/* Explore screen */
+
+"location" = "Posto";
 
 /** Error handling */
 

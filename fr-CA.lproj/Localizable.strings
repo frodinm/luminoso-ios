@@ -13,6 +13,10 @@
 "alerts" = "Alertes";
 "profile" = "Profil";
 
+/* Explore screen */
+
+"location" = "Ville";
+
 /** Error handling */
 
 "NoOrLowConnexionError" = "Vérifier votre connexion internet.";

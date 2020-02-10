@@ -13,7 +13,7 @@ class AuthenticationRepository: IAuthenticationRepository {
     }
 
     func login(loginBody: LoginBody) -> Observable<LoginResponse> {
-        remote.login(loginBody: loginBody)
+        remote.manual(loginBody: loginBody)
     }
 
 }

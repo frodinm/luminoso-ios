@@ -11,6 +11,5 @@ class SavedViewController: ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.theme.backgroundColor = themed { $0.background }
     }
 }

@@ -39,6 +39,7 @@ enum ThemeType: ThemeProvider {
         case .light: theme = ThemeType.dark
         case .dark: theme = ThemeType.light
         }
+        themeService.switch(theme)
         theme.save()
         return theme
     }
